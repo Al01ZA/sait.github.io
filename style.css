@@ -27,20 +27,29 @@ html{
 }
 
 .images2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* две равные колонки */
-    gap: 20px; /* расстояние между фотками */
-    max-width: 1100px; /* ограничиваем общую ширину блока */
-    margin: 0 auto; /* выравниваем блок по центру страницы */
-    padding: 10px; /* внутренние отступы, чтобы не прилипали к краям */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.images2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Адаптив для экранов менее 600px (телефоны) */
+@media (max-width: 600px) {
+  .images2 {
+    grid-template-columns: 1fr; /* Одна колонка */
+    padding: 5px; /* можно уменьшить паддинги */
+    gap: 10px; /* уменьшить расстояние между картинками */
   }
-  
-  .images2 img {
-    width: 100%; /* картинки занимают всю ширину колонки */
-    height: auto;
-    display: block;
-    border-radius: 8px; /* для красоты */
-  }
+}
 
 .font {
     font-family: Georgia, "Times New Roman";
@@ -144,6 +153,14 @@ iframe{
     iframe{
         width: 100%;
     }
+}
+
+@media (max-width: 600px) {
+  img, .footnote {
+    max-width: 100%;
+    height: auto;
+    font-size: 14px; /* для сносок */
+  }
 }
 
 .my-table {
